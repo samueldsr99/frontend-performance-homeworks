@@ -11,6 +11,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "analyze:bundle": "npx vite-bundle-visualizer",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -20,6 +21,7 @@
     "sharp": "^0.33.2",
     "svgo": "^3.2.0",
     "vite": "^5.1.6",
+    "vite-bundle-visualizer": "^1.1.0",
     "vite-plugin-image-optimizer": "^1.1.7"
   }
 }
