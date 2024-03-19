@@ -8,7 +8,9 @@ The following optimizations were made:
 
 ### Minification of assets
 
-Both CSS and JavaScript assets were minified using `vite`, which handles this out of the box. For image assets, the `vite-plugin-image-optimizer` was used to compress the images at build time.
+Both CSS and JavaScript assets were minified using `vite`, which handles this out of the box. For these, the project files were reorganized to define which js files were going to be bundled, as some of the files are already minified dependencies. Every file that contains the `.min.js` extension was excluded from the build process and moved to the `public` folder, the rest are minified as part of the build process.
+
+For image assets, the `vite-plugin-image-optimizer` was used to compress the images at build time.
 
 ### Lazy loading of images
 
