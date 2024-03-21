@@ -13,6 +13,7 @@ Other stuff:
 - Site is deployed in Netlify: https://frontend-perf-practice-1.netlify.app/
 - Github Actions for build and deploy
 - Lighthouse builstep
+- To visualize the bundle analysis, run `npm run build:analyze`
 
 <!-- Image -->
 
