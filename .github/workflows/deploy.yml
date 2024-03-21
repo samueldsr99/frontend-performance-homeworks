@@ -35,6 +35,7 @@ jobs:
       - name: Run Lighthouse
         uses: foo-software/lighthouse-check-action@master
         with:
+          device: desktop
           outputDirectory: /tmp/artifacts
           urls: https://frontend-perf-practice-1.netlify.app/
       - name: Upload artifacts
