@@ -6,7 +6,7 @@ on:
       - practice-1
 
 jobs:
-  build_and_test:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,14 +19,26 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Run Lighthouse tests
-        uses: treosh/lighthouse-ci-action@v2
-        with:
-          url: https://frontend-perf-practice-1.netlify.app
-
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v1
         with:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           DIST: dist
+
+  lighthouse-check:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/checkout@master
+      - run: mkdir /tmp/artifacts
+      - name: Run Lighthouse
+        uses: foo-software/lighthouse-check-action@master
+        with:
+          outputDirectory: /tmp/artifacts
+          urls: https://frontend-perf-practice-1.netlify.app/
+      - name: Upload artifacts
+        uses: actions/upload-artifact@master
+        with:
+          name: Lighthouse reports
+          path: /tmp/artifacts
