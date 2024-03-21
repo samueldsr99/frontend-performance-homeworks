@@ -16,4 +16,10 @@ Other stuff:
 
 <!-- Image -->
 
+Lightouse report from Github Actions
+
 ![Lighthouse report](./docs/perf-lighthouse-action.png)
+
+Lithouse report from Netlify plugin
+
+![Netlify Lighthouse report](./docs/netlify-lht-report.png)
