@@ -13,3 +13,7 @@ Other stuff:
 - Site is deployed in Netlify: https://frontend-perf-practice-1.netlify.app/
 - Github Actions for build and deploy
 - Lighthouse builstep
+
+<!-- Image -->
+
+![Lighthouse report](./docs/perf-lighthouse-action.png)
