@@ -1,0 +1,32 @@
+name: Netlify Deployment
+
+on:
+  push:
+    branches:
+      - practice-1
+
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      - name: Run Lighthouse tests
+        uses: treosh/lighthouse-ci-action@v2
+        with:
+          url: https://frontend-perf-practice-1.netlify.app
+
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v1
+        with:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          DIST: dist
