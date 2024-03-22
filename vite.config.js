@@ -1,10 +1,11 @@
 import { defineConfig } from "vite";
 import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 import { resolve } from "path";
+import mkcert from "vite-plugin-mkcert";
 
 export default defineConfig({
   base: "/",
-  plugins: [ViteImageOptimizer({})],
+  plugins: [mkcert(), ViteImageOptimizer({})],
   publicDir: "public",
   build: {
     outDir: "dist",
