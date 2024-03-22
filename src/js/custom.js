@@ -72,6 +72,17 @@ function showNotificationBanner() {
   heroImageContainer.appendChild(banner);
 }
 
+const showPWANotification = () => {
+  const options = {
+    body: "Friday specials available till 14:00",
+    icon: "favicon-32x32.png",
+  };
+
+  console.log("here");
+  new Notification("Friday Specials", options);
+};
+
 setTimeout(() => {
   showNotificationBanner();
+  showPWANotification();
 }, 15000);
