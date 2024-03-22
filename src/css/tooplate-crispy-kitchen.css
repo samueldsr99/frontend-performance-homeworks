@@ -872,3 +872,48 @@ strong {
     height: 50px;
   }
 }
+
+.geolocation-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99999;
+  padding: 10px 20px;
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+}
+
+.offline-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99999;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+
+#hero-image-container {
+  position: relative;
+}
+
+.notification-banner {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999999;
+  margin: 0 auto;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+
+  transform: translateY(40px);
+
+  max-width: 200px;
+  min-height: 100px;
+  display: grid;
+  place-items: center;
+}
