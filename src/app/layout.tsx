@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Link from "next/link";
 import Script from "next/script";
 import Navbar from "../components/Navbar";
 
@@ -16,6 +15,7 @@ import "../../public/css/bootstrap.min.css";
 import "../../public/css/bootstrap-icons.min.css";
 import "../toolplate-crispy-kitchen.css";
 import Footer from "./components/Footer";
+import Modal from "./components/Modal";
 
 export default function RootLayout({
   children,
@@ -42,11 +42,12 @@ export default function RootLayout({
           <Navbar />
           {children}
         </main>
+
         <Footer />
+        <Modal />
 
         <Script src="/js/jquery.min.js" defer />
         <Script src="/js/bootstrap.bundle.min.js" defer />
-        <Script src="../js/custom.js" defer />
       </body>
     </html>
   );
