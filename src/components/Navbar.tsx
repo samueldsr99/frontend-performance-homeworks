@@ -1,4 +1,38 @@
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+const items = [
+  {
+    title: "Home",
+    href: "/",
+  },
+  {
+    title: "Story",
+    href: "/about",
+  },
+  {
+    title: "Menu",
+    href: "/menu",
+  },
+  {
+    title: "Our Updates",
+    href: "/news",
+  },
+  {
+    title: "Contact",
+    href: "/contact",
+  },
+];
+
 export default function Navbar() {
+  const pathname = usePathname();
+
+  const isLinkActive = (href: string) => {
+    return pathname === href ? "active" : "";
+  };
+
   return (
     <nav className="navbar navbar-expand-lg bg-white shadow-lg">
       <div className="container">
@@ -14,10 +48,10 @@ export default function Navbar() {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        <a className="navbar-brand" href="index.html">
+        <Link className="navbar-brand" href="/">
           {" "}
           Crispy Kitchen{" "}
-        </a>
+        </Link>
 
         <div className="d-lg-none">
           <button
@@ -32,35 +66,18 @@ export default function Navbar() {
 
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav mx-auto">
-            <li className="nav-item">
-              <a className="nav-link active" href="index.html">
-                Home
-              </a>
-            </li>
-
-            <li className="nav-item">
-              <a className="nav-link" href="about.html">
-                Story
-              </a>
-            </li>
-
-            <li className="nav-item">
-              <a className="nav-link" href="menu.html">
-                Menu
-              </a>
-            </li>
-
-            <li className="nav-item">
-              <a className="nav-link" href="news.html">
-                Our Updates
-              </a>
-            </li>
-
-            <li className="nav-item">
-              <a className="nav-link" href="contact.html">
-                Contact
-              </a>
-            </li>
+            {items.map((item) => (
+              <li className="nav-item" key={item.title}>
+                <Link
+                  className={`nav-link ${
+                    isLinkActive(item.href) ? "active" : ""
+                  }`}
+                  href={item.href}
+                >
+                  {item.title}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 

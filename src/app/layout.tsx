@@ -6,6 +6,7 @@ import Navbar from "../components/Navbar";
 import "../../public/css/bootstrap.min.css";
 import "../../public/css/bootstrap-icons.min.css";
 import "../toolplate-crispy-kitchen.css";
+import Footer from "./components/Footer";
 
 export default function RootLayout({
   children,
@@ -41,6 +42,7 @@ export default function RootLayout({
           <Navbar />
           {children}
         </main>
+        <Footer />
 
         <Script src="/js/jquery.min.js" defer />
         <Script src="/js/bootstrap.bundle.min.js" defer />

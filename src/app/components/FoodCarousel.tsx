@@ -1,4 +1,5 @@
 import Image from "next/image";
+import StarRating from "../../components/StarRating";
 
 export interface CarouselItem {
   title: string;
@@ -19,23 +20,6 @@ export interface FoodCarouselProps {
   items: CarouselItem[];
 }
 
-const StarRating = ({ rating }: { rating: number }) => {
-  const integerRating = Math.floor(rating);
-
-  return Array.from({ length: 5 }, (_, index) => {
-    return (
-      <div className="reviews-stars">
-        <i
-          key={index}
-          className={`bi-star${
-            index < integerRating ? "-fill" : ""
-          } reviews-icon`}
-        ></i>
-      </div>
-    );
-  });
-};
-
 export default function FoodCarousel({ items }: FoodCarouselProps) {
   return (
     <div
@@ -45,7 +29,10 @@ export default function FoodCarousel({ items }: FoodCarouselProps) {
     >
       <div className="carousel-inner">
         {items.map((item) => (
-          <div className={`carousel-item ${item.active ? "active" : ""}`}>
+          <div
+            key={item.title}
+            className={`carousel-item ${item.active ? "active" : ""}`}
+          >
             <div className="carousel-image-wrap">
               <Image
                 priority={item.image.priority}

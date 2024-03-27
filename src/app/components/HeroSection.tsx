@@ -1,3 +1,4 @@
+import StarRating from "../../components/StarRating";
 import FoodCarousel, { CarouselItem } from "./FoodCarousel";
 
 const carouselItems: CarouselItem[] = [
@@ -21,6 +22,7 @@ const carouselItems: CarouselItem[] = [
       alt: "Steak",
       width: 536,
       height: 357,
+      priority: true,
     },
     title: "Steak",
     caption: "Steak",
@@ -33,6 +35,7 @@ const carouselItems: CarouselItem[] = [
       alt: "Sausage Pasta",
       width: 536,
       height: 357,
+      priority: true,
     },
     title: "Sausage Pasta",
     caption: "Sausage Pasta",
@@ -53,14 +56,7 @@ export default function HeroSection() {
               <div className="c-reviews my-3 d-flex flex-wrap align-items-center">
                 <div className="d-flex flex-wrap align-items-center">
                   <h4 className="text-white mb-0 me-3">4.4/5</h4>
-
-                  <div className="reviews-stars">
-                    <i className="bi-star-fill reviews-icon"></i>
-                    <i className="bi-star-fill reviews-icon"></i>
-                    <i className="bi-star-fill reviews-icon"></i>
-                    <i className="bi-star-fill reviews-icon"></i>
-                    <i className="bi-star reviews-icon"></i>
-                  </div>
+                  <StarRating rating={4.4} />
                 </div>
 
                 <p className="text-white w-100">
