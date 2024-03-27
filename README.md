@@ -1,26 +1,12 @@
-# Practice session #1 for Frontend & API Performance
+# Practice Session: NextJs
 
-Optimizations made:
+Changes made:
 
-1. Lazy load of images outside of the viewport
-2. Minification of assets using vite
-3. All images were converted to a next-gen format (webp)
-4. Defer JS files
-5. Non-blocking load of Google Fonts to reduce render-blocking resources (it increases CLS a bit but it's worth it)
-
-Other stuff:
-
-- Site is deployed in Netlify: https://frontend-perf-practice-1.netlify.app/
-- Github Actions for build and deploy
-- Lighthouse builstep
-- To visualize the bundle analysis, run `npm run build:analyze`
-
-<!-- Image -->
-
-Lightouse report from Github Actions
-
-![Lighthouse report](./docs/perf-lighthouse-action.png)
-
-Lithouse report from Netlify plugin
-
-![Netlify Lighthouse report](./docs/netlify-lht-report.png)
+- Code split html files into nextjs pages
+- Refactor common sections (headers, footers) into [layout.tsx](./src/app/layout.tsx)
+- Componentize some common code
+- Change anchor tags to next `Link` components
+- Change img tags to next `Image` components
+- Refactor fonts loading with [nextjs defaults](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts)
+- Create API endpoint (POST to `/api/reserve`) to simulate saving data from a reservation (sent to https://httpbin.org/)
+- Setup deployment to Vercel (https://frontend-performance-homeworks-next.vercel.app/)
