@@ -11,10 +11,8 @@ const carouselItems: CarouselItem[] = [
       height: 357,
       priority: true,
     },
-    title: "Manhattan, New York",
-    caption: "Fine Dining Restaurant",
-    price: 12.5,
-    rating: 4.3,
+    title: "Fine Dining Restaurant",
+    location: "Manhattan, New York",
   },
   {
     image: {

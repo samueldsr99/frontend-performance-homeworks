@@ -11,9 +11,10 @@ export interface CarouselItem {
     height: number;
     priority?: boolean;
   };
-  caption: string;
-  price: number;
-  rating: number;
+  location?: string;
+  caption?: string;
+  price?: number;
+  rating?: number;
 }
 
 export interface FoodCarouselProps {
@@ -45,19 +46,29 @@ export default function FoodCarousel({ items }: FoodCarouselProps) {
             </div>
 
             <div className="carousel-caption">
+              {item.location && (
+                <span className="text-white">
+                  <i className="bi-geo-alt me-2"></i>
+                  Manhattan, New York
+                </span>
+              )}
+
               <div className="d-flex align-items-center">
                 <h4 className="hero-text">{item.title}</h4>
-
-                <span className="price-tag ms-4">
-                  <small>$</small>
-                  {item.price}
-                </span>
+                {item.price && (
+                  <span className="price-tag ms-4">
+                    <small>$</small>
+                    {item.price.toFixed(2)}
+                  </span>
+                )}
               </div>
 
-              <div className="d-flex flex-wrap align-items-center">
-                <h5 className="reviews-text mb-0 me-3">{item.rating}/5</h5>
-                <StarRating rating={item.rating} />
-              </div>
+              {item.rating && (
+                <div className="d-flex flex-wrap align-items-center">
+                  <h5 className="reviews-text mb-0 me-3">{item.rating}/5</h5>
+                  <StarRating rating={item.rating} />
+                </div>
+              )}
             </div>
           </div>
         ))}
