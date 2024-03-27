@@ -3,6 +3,15 @@ import Link from "next/link";
 import Script from "next/script";
 import Navbar from "../components/Navbar";
 
+import { Montserrat } from "next/font/google";
+
+const montserrat = Montserrat({
+  display: "swap",
+  weight: ["300", "400", "600", "700"],
+  fallback: ["sans-serif"],
+  subsets: ["latin"],
+});
+
 import "../../public/css/bootstrap.min.css";
 import "../../public/css/bootstrap-icons.min.css";
 import "../toolplate-crispy-kitchen.css";
@@ -38,7 +47,7 @@ export default function RootLayout({
         <link href="/css/tooplate-crispy-kitchen.css" rel="stylesheet" />
       </Head>
       <body>
-        <main>
+        <main className={montserrat.className}>
           <Navbar />
           {children}
         </main>
