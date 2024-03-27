@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer className="site-footer section-padding">
@@ -12,12 +14,12 @@ export default function Footer() {
 
             <p>121 Einstein Loop N, Bronx, NY 10475, United States</p>
 
-            <a
+            <Link
               href="https://goo.gl/maps/wZVGLA7q64uC1s886"
               className="custom-btn btn btn-dark mt-2"
             >
               Directions
-            </a>
+            </Link>
           </div>
 
           <div className="col-lg-4 col-md-5 col-xs-12 tooplate-mt30">
@@ -29,9 +31,9 @@ export default function Footer() {
 
             <p>
               Tel:{" "}
-              <a href="tel: 010-02-0340" className="tel-link">
+              <Link href="tel: 010-02-0340" className="tel-link">
                 010-02-0340
-              </a>
+              </Link>
             </p>
           </div>
 
@@ -40,36 +42,36 @@ export default function Footer() {
 
             <ul className="social-icon">
               <li>
-                <a href="#" className="social-icon-link bi-facebook"></a>
+                <Link href="#" className="social-icon-link bi-facebook" />
               </li>
 
               <li>
-                <a href="#" className="social-icon-link bi-instagram"></a>
+                <Link href="#" className="social-icon-link bi-instagram" />
               </li>
 
               <li>
-                <a
+                <Link
                   href="https://twitter.com/search?q=tooplate.com&src=typed_query&f=live"
                   target="_blank"
                   className="social-icon-link bi-twitter"
-                ></a>
+                />
               </li>
 
               <li>
-                <a href="#" className="social-icon-link bi-youtube"></a>
+                <Link href="#" className="social-icon-link bi-youtube" />
               </li>
             </ul>
 
             <p className="copyright-text tooplate-mt60">
               Copyright © 2022 Crispy Kitchen Co., Ltd. <br />
               Design:
-              <a
+              <Link
                 rel="nofollow"
                 href="https://www.tooplate.com/"
                 target="_blank"
               >
                 Tooplate
-              </a>
+              </Link>
             </p>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function AboutPage() {
   return (
@@ -28,16 +29,16 @@ export default function AboutPage() {
                 by Tooplate website.
               </h4>
 
-              <a href="news.html" className="custom-btn btn btn-dark mt-3">
+              <Link href="/news" className="custom-btn btn btn-dark mt-3">
                 Check out News
-              </a>
+              </Link>
 
-              <a
-                href="contact.html"
+              <Link
+                href="contact"
                 className="custom-btn btn btn-danger mt-3 ms-3"
               >
                 Say Hi
-              </a>
+              </Link>
             </div>
 
             <div className="col-lg-6 col-12">
@@ -52,9 +53,9 @@ export default function AboutPage() {
               <p>
                 You are NOT allowed to redistribute the template ZIP file on any
                 template donwnload website. Please{" "}
-                <a href="https://www.tooplate.com/contact" target="_blank">
+                <Link href="https://www.tooplate.com/contact" target="_blank">
                   contact us
-                </a>{" "}
+                </Link>{" "}
                 for more information.
               </p>
             </div>
