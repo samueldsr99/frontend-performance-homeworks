@@ -1,16 +1,21 @@
+"use client";
+
+import { useId } from "react";
+
 export default function StarRating({ rating }: { rating: number }) {
   const integerRating = Math.floor(rating);
+  const id = useId();
 
-  return Array.from({ length: 5 }, (_, index) => {
-    return (
-      <div className="reviews-stars">
+  return (
+    <div className="reviews-stars">
+      {Array.from({ length: 5 }, (_, index) => (
         <i
-          key={index}
+          key={`${id}-${index}`}
           className={`bi-star${
             index < integerRating ? "-fill" : ""
           } reviews-icon`}
-        ></i>
-      </div>
-    );
-  });
+        />
+      ))}
+    </div>
+  );
 }
