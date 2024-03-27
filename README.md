@@ -4,7 +4,7 @@ Changes made:
 
 - Code split html files into nextjs pages
 - Refactor common sections (headers, footers) into [layout.tsx](./src/app/layout.tsx)
-- Componentize some common code
+- Componentize some common code (mostly on [index page](./src/app/page.tsx), it's an annoying task `:\`)
 - Change anchor tags to next `Link` components
 - Change img tags to next `Image` components
 - Refactor fonts loading with [nextjs defaults](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts)
