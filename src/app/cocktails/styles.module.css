@@ -1,4 +1,18 @@
+.root {
+  padding: 1rem;
+}
+
 .pageTitle {
   font-size: 2rem;
   margin-bottom: 1rem;
+}
+
+.pageContent {
+  margin-top: 24px;
+}
+
+.loadingStateContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
