@@ -10,3 +10,5 @@ Changes made:
 - Enhance styling for cocktails page using css modules
 - Added error logging using `Sentry`
 - Added error pages for 404 and 500
+
+- Deployment was updated with `cocktails` branch changes (https://frontend-performance-homeworks-next.vercel.app/)
