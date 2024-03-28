@@ -25,6 +25,10 @@ const items = [
     title: "Contact",
     href: "/contact",
   },
+  {
+    title: "Cocktails",
+    href: "/cocktails",
+  },
 ];
 
 export default function Navbar() {
