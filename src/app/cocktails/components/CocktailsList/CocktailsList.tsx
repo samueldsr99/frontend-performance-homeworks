@@ -44,27 +44,36 @@ export default async function CocktailsList({ term }: { term: string }) {
         <p>No cocktails found</p>
       ) : (
         cocktails.drinks.map((cocktail) => (
-          <div key={cocktail.idDrink} className="bg-white shadow-lg p-4">
+          <div key={cocktail.idDrink} className={styles.root}>
             <Image
-              className={styles.cocktailImage}
+              className={styles.image}
               src={cocktail.strDrinkThumb}
               alt={cocktail.strDrink}
               width={300}
               height={200}
             />
-            <h2 className="text-xl font-bold mt-4">{cocktail.strDrink}</h2>
-            <p className="text-gray-500 mt-2">Ingredients:</p>
-            <ul className="list-disc list-inside mt-2">
-              {Array.from({ length: 10 }).map((_, index) => (
-                <li key={index}>
-                  {
+            <div className={styles.description}>
+              <h2 className={styles.ingredientTitle}>{cocktail.strDrink}</h2>
+              <p className={styles.ingredientsTitle}>Ingredients:</p>
+              <ul className={styles.ingredientsContainer}>
+                {Array.from({ length: 10 }).map((_, index) => {
+                  const ingredient =
                     cocktail[
                       `strIngredient${index + 1}` as keyof typeof cocktail
-                    ]
+                    ];
+
+                  if (!ingredient) {
+                    return null;
                   }
-                </li>
-              ))}
-            </ul>
+
+                  return (
+                    <li key={index} className={styles.ingredient}>
+                      {ingredient}
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
           </div>
         ))
       )}

@@ -1,0 +1,43 @@
+.root {
+  padding: 1rem;
+  max-width: 500px;
+
+  display: flex;
+}
+
+.input {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+
+  outline: none;
+  transition: border 0.2s;
+}
+.input:focus {
+  border: 1px solid #dc3545;
+}
+
+.searchButton {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+
+  background-color: lightgray;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  box-sizing: border-box;
+
+  padding: 4px 18px;
+
+  font-size: 18px;
+}
+
+.searchButton:hover {
+  background-color: gray;
+}

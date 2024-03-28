@@ -1,6 +1,50 @@
-.cocktailImage {
+.root {
+  padding: 1rem;
+  width: fit-content;
+
+  display: flex;
+  gap: 12px;
+}
+
+.image {
   width: 300px;
   height: 200px;
   object-fit: cover;
+  border-radius: 12px;
   margin-bottom: 1rem;
+}
+
+.title {
+  margin-bottom: 1rem;
+}
+
+.ingredientTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.ingredientsTitle {
+  color: black;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.ingredientsContainer {
+  padding-left: 4px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 300px;
+  gap: 8px;
+}
+
+.ingredient {
+  list-style-type: none;
+  background-color: salmon;
+  padding-left: 6px;
+  padding-right: 6px;
+  border-radius: 8px;
+  color: white;
 }

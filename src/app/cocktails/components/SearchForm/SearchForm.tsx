@@ -3,6 +3,8 @@
 import { useRouter } from "next/navigation";
 import { FormEvent } from "react";
 
+import styles from "./styles.module.css";
+
 export default function SearchForm() {
   const router = useRouter();
 
@@ -19,14 +21,17 @@ export default function SearchForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className={styles.root} onSubmit={handleSubmit}>
       <input
         id="search"
+        className={styles.input}
         name="search"
         type="text"
         placeholder="Search cocktails"
       />
-      <button type="submit">Search</button>
+      <button className={styles.searchButton} type="submit">
+        🔍
+      </button>
     </form>
   );
 }
